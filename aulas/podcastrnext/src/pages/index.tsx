@@ -66,7 +66,7 @@ export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
         })}
         </ul>
       </section>
-      <section className={styles.allEpisodes}></section>
+      <section className={styles.allEpisodes}>
       <h2>Todos episódios</h2>
       <table cellSpacing={0}>
         <thead>
@@ -111,12 +111,13 @@ export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
           })}
         </tbody>
       </table>
+      </section>
     </div>
   )
 }
 
 export  const getStaticProps: GetStaticProps = async () => {
-  const { data } = await api.get('episodes?_limit=12$_sort=published_at$_order=desc', {
+  const { data } = await api.get('episodes', {
     params: {
       _limit: 12, 
       _sort: 'published_at',
