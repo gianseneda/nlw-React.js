@@ -7,7 +7,7 @@ import Link from 'next/link'
 import { api } from '../../services/api'
 import { convertDurationToTimeString } from '../../utils/convertDurationToTimeString'
 
-import styles from './episode.module.scss';
+import styles from './episodes.module.scss';
 
 type Episode = {
   id: string;
@@ -57,10 +57,10 @@ export default function Episode({ episode }: EpisodeProps) {
   )
 }
 
-export const getStaticPaths: GetStaticPaths = async () => {
+export const getStaticPaths: GetStaticPaths = async () => { //como a página Home é gerada estáticamente, os parâmetros que serão dinamicamente gerados (pois não sabemos onde se clicar), eu preciso passar essa função
   return {
-    paths: [],
-    fallback: 'blocking'
+    paths: [], //nenhum episódio está sendo gerado estaticamente
+    fallback: 'blocking' //já que eu não settei nenhum episódio pra carregar estaticamente, o 'blocking' roda a requisicao do episodio no NEXT e não no client-side 
   }
 }
 
