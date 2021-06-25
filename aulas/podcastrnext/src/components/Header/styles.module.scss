@@ -19,4 +19,25 @@
     margin-left: auto;
     text-transform: capitalize;
   }
+
+  button {
+    width: 1.5rem;
+    height: 1.5rem;
+    background: transparent;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 0;
+    margin-left: 0.5rem;
+
+    transition: filter 0.2s;
+
+    img {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+
+    &:hover {
+      filter: brightness(0.95);
+    }
+  }
 }

@@ -21,6 +21,23 @@
   --purple-800: #6f48c9;
 }
 
+[data-theme="dark"] {
+  --white: #1f1b24; //header and cards
+
+  --gray-50: #121212.; //background
+  --gray-100: #332940; //border
+  --gray-200: #868686; //títulos
+  --gray-500: #99999b; //<p> 2
+  --gray-800: #e0e0e0; //<p> 1
+
+  --green-500: #92e6a6;
+
+  --purple-300: #d7c5fe;
+  --purple-400: #d2befb;
+  --purple-500: #b89fef;
+  --purple-800: #9c7fda;
+}
+
 @media (max-width: 1080px) {
   html {
     font-size: 93.75%; //15px
