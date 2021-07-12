@@ -6,8 +6,14 @@ import "../styles/repositories.scss";
 
 // https://api.github.com/orgs/rocketseat/repos
 
+type Repository = {
+  name: string;
+  description: string;
+  html_url: string;
+};
+
 export function RepositoryList() {
-  const [repositories, setRepositories] = useState([]); //estado inicial é uma lista, no caso, vazia, então []
+  const [repositories, setRepositories] = useState<Repository[]>([]); //estado inicial é uma lista, no caso, vazia, então []
 
   useEffect(() => {
     fetch("https://api.github.com/orgs/rocketseat/repos")
